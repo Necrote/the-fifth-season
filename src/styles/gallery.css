@@ -41,8 +41,8 @@
 .certificate-preview > img { display: block; width: 100%; height: auto; }
 .certificate-preview figcaption { position: absolute; inset: 24% 17% 27%; display: flex; flex-direction: column; align-items: center; justify-content: space-between; color: var(--ink); }
 .certificate-preview h3 { margin: 0; font: clamp(.65rem, 2.5vw, 1.6rem) var(--serif); text-transform: uppercase; }
-.certificate-preview span { font-size: clamp(.38rem, 1.3vw, .7rem); text-transform: uppercase; letter-spacing: .12em; }
-.certificate-preview strong { font: clamp(.6rem, 2vw, 1.25rem) var(--serif); }
+.certificate-preview span { font: clamp(.6rem, 2vw, 1.25rem) var(--serif); }
+.certificate-preview strong { font: clamp(.38rem, 1.3vw, .7rem) var(--serif); }
 .certificate-preview p { margin: 0; font-size: clamp(.42rem, 1.3vw, .78rem); }
 .certificate-preview small { font-size: clamp(.4rem, 1.3vw, .7rem); line-height: 1.5; }
 .reveal-actions { flex-direction: column; align-items: center; }

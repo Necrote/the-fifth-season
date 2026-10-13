@@ -5,7 +5,7 @@ export interface AudioPreferences {
 }
 
 export const AUDIO_STORAGE_KEY = 'the-fifth-season:audio:v1';
-export const DEFAULT_AUDIO: AudioPreferences = { muted: false, music: 0.2, effects: 0.9 };
+export const DEFAULT_AUDIO: AudioPreferences = { muted: false, music: 1, effects: 1 };
 const volume = (value: unknown, fallback: number) => typeof value === 'number' && Number.isFinite(value) ? Math.max(0, Math.min(1, value)) : fallback;
 
 export function loadAudioPreferences(storage?: Pick<Storage, 'getItem'>): AudioPreferences {

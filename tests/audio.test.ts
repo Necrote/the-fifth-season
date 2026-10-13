@@ -28,7 +28,8 @@ function audioFixture() {
 }
 
 describe('sound preferences', () => {
-  it('uses quiet defaults and persists independently from puzzle progress', () => {
+  it('defaults both sliders to 100% and preserves independently saved preferences', () => {
+    expect(DEFAULT_AUDIO).toEqual({ muted: false, music: 1, effects: 1 });
     expect(loadAudioPreferences()).toEqual(DEFAULT_AUDIO);
     saveAudioPreferences({ muted: true, music: 0.2, effects: 0.7 });
     expect(loadAudioPreferences()).toEqual({ muted: true, music: 0.2, effects: 0.7 });
