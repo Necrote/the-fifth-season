@@ -40,7 +40,7 @@ export function GateRoom({ state, dispatch }: Props) {
   const submit = (event: FormEvent) => { event.preventDefault(); if (check(validatePuzzle('gate', answer))) dispatch({ type: 'SOLVE', puzzle: 'gate' }); };
   return <RoomScene {...sceneProps(state, dispatch, 'gate')} eyebrow="Case 1026 · Entry" title="The Warden’s Gate" goal="An old case. A new lock. Seven empty spaces.">
     <div className="gate-hero">
-      <div className="iron-gate" aria-hidden="true"><span /><span /><span /><span /><b>CASE<br />REOPENED</b></div>
+      <figure className="case-reopened-art"><img src={`${import.meta.env.BASE_URL}images/props/case-reopened.webp`} alt="An Art Nouveau iron gate with a brass CASE REOPENED plaque" width={1122} height={1402} /></figure>
       <div className="evidence-card"><p>Your first evidence arrived by post.</p><form onSubmit={submit}><label htmlFor="gate-code">Seven-character keypad</label><input id="gate-code" value={answer} onChange={(e) => setAnswer(e.target.value)} autoComplete="off" maxLength={12} placeholder="•••••••" /><button className="button primary" type="submit">Try the lock</button></form><Feedback value={feedback} /></div>
     </div>
     {state.solved.gate && <div className="discovered-evidence"><span className="eyebrow">Case file recovered</span><h2>The case has been reopened.</h2><p>Four witnesses await their names.</p></div>}

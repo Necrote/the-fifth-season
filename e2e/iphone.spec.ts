@@ -107,9 +107,9 @@ test('both clocks accept dates, colon-capable text entry and touch hand controls
 test('cipher shift controls work by touch and the wheel survives pointer cancellation', async ({ page }) => {
   await resume(page, fixture('finalGallery'));
   await page.getByRole('button', { name: 'Decrease cipher shift' }).tap();
-  await expect(page.getByRole('slider', { name: 'Shift', exact: true })).toHaveValue('25');
+  await expect(page.getByRole('slider', { name: 'Shift', exact: true })).toHaveValue('16');
   await page.getByRole('button', { name: 'Increase cipher shift' }).tap();
-  await expect(page.getByRole('slider', { name: 'Shift', exact: true })).toHaveValue('0');
+  await expect(page.getByRole('slider', { name: 'Shift', exact: true })).toHaveValue('17');
   await page.getByRole('slider', { name: 'Shift', exact: true }).fill('23');
   await expect(page.locator('.output-strip strong')).toHaveText('TOGETHER');
   // A real contact starts capture; synthetic moves test geometry and cancellation,

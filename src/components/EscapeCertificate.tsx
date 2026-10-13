@@ -22,8 +22,8 @@ export function EscapeCertificate({ duration }: { duration: string }) {
       context.drawImage(image, 0, 0, canvas.width, canvas.height);
       context.fillStyle = '#173f46'; context.textAlign = 'center';
       context.font = '74px Georgia'; context.fillText('THE FIFTH SEASON', 900, 340);
-      context.font = '30px Georgia'; context.fillText('E S C A P E  C O M P L E T E', 900, 412);
-      context.font = '58px Georgia'; context.fillText('Happy Birthday!', 900, 570);
+      context.font = '58px Georgia'; context.fillText('You Escaped!', 900, 412);
+      context.font = '30px Georgia'; context.fillText('Happy Birthday!', 900, 570);
       context.font = '38px Georgia'; context.fillText('Two cities. Two prisoners. Same team.', 900, 650);
       context.font = '34px Georgia'; context.fillText(`Elapsed time · ${duration}`, 900, 750);
       context.font = '28px Georgia'; context.fillText('8 puzzles solved', 900, 807);
@@ -50,7 +50,7 @@ export function EscapeCertificate({ duration }: { duration: string }) {
   return <div className="certificate-panel">
     <details><summary>Preview certificate</summary><figure className="certificate-preview">
       <img src={artworkUrl} alt="An ornate illustrated certificate border with flowers, wheat, fruit and snow-covered boughs" width={1536} height={1024} />
-      <figcaption><h3>The Fifth Season</h3><span>Escape complete</span><strong>Happy Birthday!</strong><p>Two cities. Two prisoners. Same team.</p><small>Elapsed time · {duration}<br />8 puzzles solved</small></figcaption>
+      <figcaption><h3>The Fifth Season</h3><span>You Escaped!</span><strong>Happy Birthday!</strong><p>Two cities. Two prisoners. Same team.</p><small>Elapsed time · {duration}<br />8 puzzles solved</small></figcaption>
     </figure></details>
     <button className="button primary" disabled={exporting} onClick={() => void save()}>{exporting ? 'Preparing certificate…' : 'Save certificate PNG'}</button>
     {prepared && <>

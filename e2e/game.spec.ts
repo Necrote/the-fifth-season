@@ -130,7 +130,7 @@ test('solves the complete case with deliberate discoveries and the archive wheel
   await page.getByLabel('Sender-held challenge phrase').fill('SAME TEAM');
   await page.getByRole('button', { name: 'Turn the first key' }).click();
   await page.getByRole('button', { name: 'Increase cipher shift' }).click();
-  await expect(page.getByRole('slider', { name: 'Shift' })).toHaveValue('1');
+  await expect(page.getByRole('slider', { name: 'Shift' })).toHaveValue('18');
   await page.getByRole('slider', { name: 'Shift' }).fill('23');
   await expect(page.locator('.output-strip strong')).toHaveText('TOGETHER');
   await page.reload();

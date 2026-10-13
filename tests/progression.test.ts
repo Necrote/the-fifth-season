@@ -3,6 +3,14 @@ import { createInitialState, gameReducer, getUnlockedRooms, loadState, saveState
 import { SEASONS, shuffleSeasons } from '../src/game/puzzles';
 
 describe('game progression and persistence', () => {
+  it('starts both wheels at 17 without overwriting saved wheel positions', () => {
+    const initial = createInitialState();
+    expect(initial.cipherShift).toBe(17); expect(initial.finalCipherShift).toBe(17);
+    const saved = { ...initial, cipherShift: 0, finalCipherShift: 23 };
+    const restored = loadState({ getItem: () => JSON.stringify(saved) });
+    expect(restored?.cipherShift).toBe(0); expect(restored?.finalCipherShift).toBe(23);
+    expect(gameReducer(saved, { type: 'RESET' }).cipherShift).toBe(17);
+  });
   it('continues in memory when reading or writing storage is blocked', () => {
     const blocked = { getItem: () => { throw new Error('SecurityError'); }, setItem: () => { throw new Error('QuotaExceededError'); } };
     expect(loadState(blocked)).toBeNull();

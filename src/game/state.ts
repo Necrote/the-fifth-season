@@ -8,8 +8,8 @@ const emptySolved = (): GameState['solved'] => ({ gate: false, seasons: false, c
 export function createInitialState(now = Date.now()): GameState {
   return {
     schemaVersion: 1, startedAt: now, elapsedMs: 0, activeRoom: 'gate', solved: emptySolved(), inventory: [],
-    seasonOrder: [null, null, null, null], overlaySelections: {}, cipherShift: 0, cipherInput: '',
-    galleryLayout: shuffleSeasons(), calendarSlots: [null, null, null, null], finalCipherShift: 0,
+    seasonOrder: [null, null, null, null], overlaySelections: {}, cipherShift: 17, cipherInput: '',
+    galleryLayout: shuffleSeasons(), calendarSlots: [null, null, null, null], finalCipherShift: 17,
     witnessAnswers: ['', '', '', ''], witnessesSolved: false, lensRevealed: false, lensHintLevel: 0,
     postal: { recipient: '', sender: '', routed: false, code: '' },
     clocks: { nyDate: '', nyTime: '12:00', nyPeriod: 'AM', mumDate: '', mumTime: '12:00', mumPeriod: 'AM' },
