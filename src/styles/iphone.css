@@ -1,0 +1,40 @@
+/* Safe areas remain additive; never disable pinch zoom or page scrolling. */
+:root { --header-height: 74px; }
+body { padding-left: env(safe-area-inset-left, 0px); padding-right: env(safe-area-inset-right, 0px); }
+.app-shell, .landing-shell, .story-intro { min-height: 100svh; }
+.landing-shell, .story-intro { padding-top: calc(5rem + env(safe-area-inset-top, 0px)); padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0px)); }
+.topbar { height: calc(var(--header-height) + env(safe-area-inset-top, 0px)); padding-top: env(safe-area-inset-top, 0px); }
+.utility-float { top: calc(.75rem + env(safe-area-inset-top, 0px)); right: calc(.75rem + env(safe-area-inset-right, 0px)); }
+.site-footer { gap: 1rem; padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); }
+.main-content, .lens-discovery, .evidence-photo-reveal, .discovered-evidence { scroll-margin-top: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 1rem); }
+.portrait-dialog { height: min(94dvh, 1200px); max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 1rem); }
+.audio-dialog { max-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 1rem); }
+.certificate-save-options { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1rem; }
+.certificate-save-options a { display: inline-flex; align-items: center; text-decoration: none; }
+.certificate-panel .save-help { font-size: .85rem; line-height: 1.5; }
+@media (max-width: 760px) {
+  :root { --header-height: 64px; }
+  .site-footer { flex-wrap: wrap; }
+}
+@media (pointer: coarse) {
+  /* iOS zooms focused text controls below 16px. Keep native date pickers within cards. */
+  input:not([type='range']):not([type='radio']), select, textarea { font-size: max(16px, 1em); }
+  input[type='date'] { min-width: 0; width: 100%; -webkit-appearance: none; appearance: none; }
+  input[type='date']::-webkit-date-and-time-value { text-align: left; }
+  button, .button { min-height: 44px; touch-action: manipulation; }
+  .audio-mute, .round-button { width: 44px; height: 44px; flex-shrink: 0; }
+  .audio-settings, .hand-controls button { min-height: 44px; }
+  summary { min-height: 44px; padding-top: .75rem; padding-bottom: .75rem; }
+  .lens-combination .hotspot { width: 44px; height: 44px; }
+  .lens-combination .hotspot::before { inset: 0; }
+  .lens-fallback label { min-height: 44px; }
+  .wheel-controls { gap: .4rem; }
+  .wheel-controls label { min-width: 0; }
+  .wheel-controls input[type='range'] { min-height: 44px; }
+  .digit-rollers { grid-auto-columns: minmax(44px, 1fr); overflow-x: auto; }
+  .room-nav { overscroll-behavior-x: contain; }
+}
+@media (pointer: coarse) and (max-width: 380px) {
+  .routing-slot { padding: .4rem; }
+  .digit-rollers { gap: .05rem; }
+}

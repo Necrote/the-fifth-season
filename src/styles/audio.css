@@ -1,0 +1,31 @@
+.topbar-actions, .utility-float, .audio-controls { display: flex; align-items: center; gap: .45rem; }
+.topbar-actions { justify-self: end; }
+.utility-float { position: fixed; right: 1rem; top: 1rem; z-index: 30; color: #f8edcf; }
+.utility-float .contrast-float { position: static; }
+.audio-mute, .audio-settings { min-height: 40px; color: inherit; background: transparent; border: 1px solid rgb(255 255 255 / 35%); border-radius: 99px; padding: .45rem .7rem; }
+.audio-mute { display: grid; place-items: center; width: 40px; padding: .4rem; }
+.audio-mute[aria-pressed="true"] { background: rgb(216 183 109 / 18%); }
+.audio-mute svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.audio-dialog { width: min(440px, calc(100% - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.5rem; overflow-y: auto; color: var(--ink); background: var(--paper-light); border: 3px double var(--brass); border-radius: 12px; box-shadow: var(--shadow); }
+.audio-dialog::backdrop { background: rgb(3 22 26 / 78%); }
+.audio-dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: .7rem; }
+.audio-dialog h2 { margin: 0; font-size: 1.8rem; }
+.audio-dialog p { font-size: .9rem; line-height: 1.5; }
+.audio-dialog-heading button { padding: .4rem .7rem; font-size: 1.3rem; }
+.audio-slider { display: grid; grid-template-columns: 1fr auto; gap: .5rem; margin: 1.3rem 0; }
+.audio-slider input { grid-column: 1 / -1; width: 100%; padding: 0; accent-color: var(--rust); }
+.audio-slider output { font-weight: 400; font-variant-numeric: tabular-nums; }
+.audio-dialog .audio-status { margin-bottom: 0; font-size: .78rem; }
+.high-contrast .audio-dialog { background: #fff; color: #000; }
+@media (max-width: 760px) {
+  .brand b, .contrast-toggle span { width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+}
+@media (max-width: 650px) {
+  .topbar { padding: 0 .75rem; }
+  .topbar-actions { gap: .25rem; }
+  .audio-controls { gap: .25rem; }
+  .audio-settings { padding: .45rem .5rem; font-size: .78rem; }
+  .topbar .contrast-toggle { padding: .5rem .6rem; }
+  .utility-float { right: .6rem; top: .6rem; gap: .35rem; }
+  .utility-float .contrast-float { font-size: .75rem; }
+}
