@@ -1,0 +1,54 @@
+/* Generated artwork, with readable, semantic text and interactive controls layered above it. */
+.illustrated-testimony {
+  padding: 30% 12% 12%; min-height: 285px; border: 0; border-radius: 0;
+  background: var(--witness-art) center / 100% 100% no-repeat; box-shadow: none;
+  filter: drop-shadow(2px 5px 3px rgb(65 41 20 / 12%));
+}
+.illustrated-testimony blockquote { font: 1.1rem/1.5 var(--serif); min-height: 3em; }
+.illustrated-testimony input { background: rgb(249 235 194 / 65%); border-bottom-color: #8f6338; }
+.evidence-card, .discovered-evidence, .inscription, .hint-panel, .reference-card, .inspected-object, .warden-note, .partner-interstitial, .dual-lock, .clock-fallback {
+  background-image: var(--paper-art); background-repeat: no-repeat; background-position: center; background-size: 100% 100%;
+  background-color: transparent; border: 0; border-radius: 0; box-shadow: none;
+  padding: clamp(1.3rem, 3vw, 2.1rem);
+}
+.discovered-evidence, .inscription, .hint-panel { filter: drop-shadow(2px 4px 2px rgb(68 43 17 / 9%)); }
+.discovered-evidence, .inscription, .hint-panel, .warden-note, .partner-interstitial { padding-inline: max(1.4rem, 9%); }
+.partner-interstitial { gap: 1rem; }
+.reference-card { margin: 1.5rem 0; }
+.calendar-strip, .city-clock, .routing-slot, .postal-tickets > .routing-slot {
+  background-image: var(--mechanism-art); background-repeat: no-repeat; background-position: center; background-size: 100% 100%; border: 0;
+}
+.calendar-strip { padding: 1.7rem 1.1rem; }
+.city-clock { padding: 1.5rem; color: #f3e6c7; }
+.city-clock header { background: var(--brass-art) center / 100% 100% no-repeat; padding: 1rem .8rem; min-height: 66px; justify-content: center; }
+.city-clock h2 { color: #f7e3b3; font-variant: small-caps; letter-spacing: .06em; font-size: 1.6rem; }
+.clock-fallback { color: var(--ink); padding: 3rem 1.5rem; }
+.clock-fallback summary { margin-bottom: .9rem; }
+.dual-lock { padding-block: 2.6rem; }
+.routing-slot { padding: 1.3rem; }
+.routing-slot h2 { text-align: center; background: var(--brass-art) center / 100% 100% no-repeat; padding: .9rem .4rem; }
+.postal-tickets > div:not(.routing-slot) { background: var(--paper-art) center / 100% 100% no-repeat; border: 0; padding: 1.5rem .9rem; }
+.inventory li { background: var(--paper-art) center / 100% 100% no-repeat; padding: .8rem 1rem; }
+.inventory li::before { content: none; }
+.lens-object:not(.examined) { position: relative; padding: .5rem 1rem 3.5rem; border: 2px solid #b59047; border-radius: 48% 48% 12px 12px; background: radial-gradient(ellipse at center, #fff9e5, #e5d2a1); box-shadow: 0 7px 15px rgb(50 34 10 / 14%); }
+.lens-object:not(.examined):hover, .lens-object:not(.examined):focus-visible { border-color: #805022; box-shadow: 0 9px 25px rgb(106 74 17 / 25%); transform: translateY(-3px); }
+.lens-affordance { display: inline-flex; gap: .7rem; align-items: center; position: absolute; bottom: .8rem; left: 50%; transform: translateX(-50%); padding: .55rem 1.1rem; color: #f8ebcd; background: #244a48; border: 1px solid #c9a661; border-radius: 99px; font: 1rem var(--serif); white-space: nowrap; }
+.lens-object.examined { cursor: default; }
+.lens-object.examined:hover { transform: none; }
+.evidence-fifth-frame { padding: 1.2rem; }
+.evidence-reveal { position: relative; width: min(680px, 100%); margin: auto; }
+.evidence-envelope-button { display: block; position: relative; width: 100%; padding: 0; border: 0; background: transparent; transform-origin: top center; }
+.evidence-envelope-button > img { display: block; width: 100%; height: auto; }
+.envelope-open-label { display: inline-flex; gap: .65rem; align-items: center; margin: .5rem auto 1rem; padding: .7rem 1.2rem; border: 1px solid #caa45e; border-radius: 99px; background: #1d4445; color: #f8e5b8; font: 1.1rem var(--serif); }
+.evidence-envelope-button:hover:not(:disabled) .envelope-open-label { background: #315c54; box-shadow: 0 0 0 4px rgb(207 171 98 / 20%); }
+.evidence-reveal.opened > .evidence-envelope-button { position: absolute; inset: 0 0 auto; z-index: 2; pointer-events: none; animation: evidence-unseal .8s ease forwards; }
+.evidence-photo { width: 100%; margin: 0; scroll-margin-top: 90px; animation: evidence-emerge 1s ease both; }
+.evidence-photo > img { display: block; width: 100%; height: auto; }
+.evidence-photo figcaption { color: #f0dfba; font: italic .9rem/1.5 var(--serif); }
+.evidence-fifth-frame .evidence-photo figcaption p { color: inherit; }
+@keyframes evidence-unseal { to { transform: perspective(900px) rotateX(65deg) translateY(-12%); opacity: 0; } }
+@keyframes evidence-emerge { from { transform: translateY(45px) scale(.94); opacity: 0; } to { transform: none; opacity: 1; } }
+.high-contrast .illustrated-testimony, .high-contrast .evidence-card, .high-contrast .discovered-evidence, .high-contrast .inscription, .high-contrast .hint-panel, .high-contrast .reference-card, .high-contrast .inspected-object, .high-contrast .warden-note, .high-contrast .partner-interstitial, .high-contrast .dual-lock, .high-contrast .clock-fallback, .high-contrast .postal-tickets > div { background: #fff; color: #000; border: 2px solid #000; }
+.high-contrast .illustrated-testimony > .sr-only { position: static; width: auto; height: auto; overflow: visible; clip-path: none; margin: 0; display: block; font-weight: bold; }
+.high-contrast .illustrated-testimony { padding-top: 1.3rem; }
+@media (max-width: 480px) { .illustrated-testimony { padding: 28% 12% 12%; } .city-clock { padding: 1.1rem; } .evidence-fifth-frame { padding: .5rem; } .evidence-card input { letter-spacing: .15em; } }
