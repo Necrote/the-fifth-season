@@ -142,12 +142,12 @@ test('solves the complete case with deliberate discoveries and the archive wheel
   await expect(page.getByRole('heading', { name: 'The Fifth Season' })).toBeVisible();
   await expect(page.getByText('8 / 8')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Happy Birthday!', exact: true })).toBeVisible();
-  const revealPhoto = page.getByRole('img', { name: /Three friends celebrating their escape/ });
+  const revealPhoto = page.getByRole('img', { name: /vintage-style illustration of three friends/ });
   await expect(revealPhoto).toHaveCount(0);
   await page.getByRole('button', { name: 'Open the evidence envelope', exact: true }).click();
   await expect(revealPhoto).toBeVisible();
-  await expect.poll(() => revealPhoto.evaluate((image: HTMLImageElement) => image.complete && image.naturalHeight > image.naturalWidth)).toBe(true);
-  await expect(revealPhoto).toHaveAttribute('src', /warden-evidence-photo\.webp$/);
+  await expect.poll(() => revealPhoto.evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > image.naturalHeight)).toBe(true);
+  await expect(revealPhoto).toHaveAttribute('src', /prison-break-illustration\.png$/);
   await page.reload(); await page.getByRole('button', { name: /Continue case/ }).click();
   await expect(revealPhoto).toBeVisible();
   await expect(page.getByRole('button', { name: 'Open the evidence envelope', exact: true })).toHaveCount(0);

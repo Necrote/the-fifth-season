@@ -40,7 +40,7 @@ The four files in `public/images/seasons/` are crops made from the supplied post
 - `autumn-fruit`
 - `winter-bough`
 
-The fourteen generated illustrations in `public/images/props/` are optimized WebP assets: the artist’s lens, key engraved 26, sealed envelope, torn timestamp slip, certificate border, four numbered witness cards, reusable paper/brass/wood panels, final evidence-photo composition, and the CASE REOPENED gate. Transparent props preserve alpha.
+The thirteen generated illustrations in `public/images/props/` are optimized WebP assets: the artist’s lens, key engraved 26, sealed envelope, torn timestamp slip, certificate border, four numbered witness cards, reusable paper/brass/wood panels, and the CASE REOPENED gate. The final reveal uses `public/images/prison-break-illustration.png`. Transparent props preserve alpha.
 
 ## Sound
 

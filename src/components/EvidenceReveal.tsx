@@ -16,7 +16,7 @@ export function EvidenceReveal({ opened, onOpen }: { opened: boolean; onOpen: ()
       <span className="envelope-open-label"><span aria-hidden="true">◇</span> Break the seal</span>
     </button>
     {opened && <figure className="evidence-photo" ref={photograph} tabIndex={-1}>
-      <img src={`${import.meta.env.BASE_URL}images/props/warden-evidence-photo.webp`} alt="Three friends celebrating their escape beside an open safe, mounted as a photograph from the warden’s evidence cabinet with its complete timestamp slip" width={1024} height={1536} decoding="async" />
+      <img src={`${import.meta.env.BASE_URL}images/prison-break-illustration.png`} alt="A vintage-style illustration of three friends celebrating their library escape beside an open safe" width={1448} height={1086} decoding="async" />
       <figcaption>
         <span className="sr-only">Prison Break · Evidence 1026. October 26, 2025 · 11:15 AM · New York.</span>
         <p>One instant; two local times.</p>
